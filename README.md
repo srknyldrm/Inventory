@@ -12,10 +12,10 @@ Usage Platforms
 -----------------
   Product crud Operations
   -----------------------
-  - Get http://localhost:8080/products - lists all products.
+  - Get http://localhost:8080/products - lists all products.                      
     ![image](https://user-images.githubusercontent.com/6370588/230985158-005a8830-fcf8-4f2c-ae5c-3600c3b79651.png)
   
-  - Post http://localhost:8080/products - Adds product.
+  - Post http://localhost:8080/products - Adds product.                                
    ![image](https://user-images.githubusercontent.com/6370588/230985780-8dc3da37-58ea-4239-8755-94d3393ef2c0.png)
   
   - Put http://localhost:8080/products/{product_id} - Updates with the id of the product
