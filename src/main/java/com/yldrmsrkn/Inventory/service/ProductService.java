@@ -64,6 +64,8 @@ public class ProductService {
 
     public List<Product> getAllProducts() {
         return productRepository.findAll();
+    } public List<ProductHistory> getAllProductHistories() {
+        return productHistoryRepository.findAll();
     }
 
     public List<Product> findByCategory(Long category) {

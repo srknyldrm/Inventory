@@ -1,11 +1,13 @@
 package com.yldrmsrkn.Inventory.controller;
 
 import com.yldrmsrkn.Inventory.entity.Product;
+import com.yldrmsrkn.Inventory.entity.ProductHistory;
 import com.yldrmsrkn.Inventory.exception.CategoryNotFoundException;
 import com.yldrmsrkn.Inventory.exception.ProductAlreadyExistsException;
 import com.yldrmsrkn.Inventory.exception.ProductNotFoundException;
 import com.yldrmsrkn.Inventory.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +16,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
+@EnableAutoConfiguration
 @RequestMapping("/products")
 public class ProductController {
 
@@ -44,6 +47,12 @@ public class ProductController {
     public ResponseEntity<List<Product>> getAllProducts() {
         List<Product> products = productService.getAllProducts();
         return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+
+    @GetMapping("/producthistory")
+    public ResponseEntity<List<ProductHistory>> getAllProductsHistory() {
+        List<ProductHistory> productHistories = productService.getAllProductHistories();
+        return new ResponseEntity<>(productHistories, HttpStatus.OK);
     }
 
     @GetMapping("/category/{categoryId}")

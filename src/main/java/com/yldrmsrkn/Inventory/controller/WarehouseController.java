@@ -4,12 +4,14 @@ import com.yldrmsrkn.Inventory.entity.Warehouse;
 import com.yldrmsrkn.Inventory.exception.WarehouseNotFoundException;
 import com.yldrmsrkn.Inventory.service.WarehouseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@EnableAutoConfiguration
 @RequestMapping("/api/warehouse")
 public class WarehouseController {
 

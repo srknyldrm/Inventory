@@ -51,12 +51,15 @@ public class InventoryService {
         return inventoryRepository.findById(id).orElseThrow(() -> new InventoryNotFoundException("Inventory not found with id : " + id));
     }
 
+    public List<InventoryHistory> getAllInventoryHistories() {
+        return inventoryHistoryRepository.findAll();
+    }
+
     @Transactional
     public void createInventory(Inventory inventory) throws ProductNotFoundException, InventoryNotFoundException {
         if (!productRepository.existsById(inventory.getProduct().getId())) {
             throw new ProductNotFoundException("Product not exists.");
         }
-
         /*UUID productId = inventoryRepository.findAll().stream().filter(inv -> inv.getRegion().equals(inventory.getRegion())).map(Inventory::getProduct).filter(p -> p.getId().equals(inventory.getProduct().getId())).map(Product::getId).findFirst().orElse(null);
          */
         Inventory existingItem = inventoryRepository.findAll().stream().filter(inv -> inv.getWarehouse().getId().equals(inventory.getWarehouse().getId())).filter(inv -> inv.getProduct().getId().equals(inventory.getProduct().getId())).findFirst().orElse(null);
@@ -86,11 +89,6 @@ public class InventoryService {
             throw new InventoryNotFoundException("Inventory exists.");
 
     }
-
-    public void deleteInventoryById(Long id) {
-        inventoryRepository.deleteById(id);
-    }
-
     @Transactional
     public void updateInventory(Inventory inventoryDetails) throws InventoryNotFoundException {
         Inventory existingItem = inventoryRepository.findAll().stream().filter(inv -> inv.getWarehouse().getId().equals(inventoryDetails.getWarehouse().getId())).filter(inv -> inv.getProduct().getId().equals(inventoryDetails.getProduct().getId())).findFirst().orElse(null);
@@ -167,6 +165,5 @@ public class InventoryService {
 
         inventoryRepository.deleteById(id);
         inventoryHistoryRepository.save(inventoryHistory);
-
     }
 }

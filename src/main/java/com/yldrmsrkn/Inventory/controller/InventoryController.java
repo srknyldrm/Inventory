@@ -1,6 +1,7 @@
 package com.yldrmsrkn.Inventory.controller;
 
 import com.yldrmsrkn.Inventory.entity.Inventory;
+import com.yldrmsrkn.Inventory.entity.InventoryHistory;
 import com.yldrmsrkn.Inventory.enums.City;
 import com.yldrmsrkn.Inventory.enums.Region;
 import com.yldrmsrkn.Inventory.exception.InventoryNotFoundException;
@@ -8,12 +9,15 @@ import com.yldrmsrkn.Inventory.exception.ProductNotFoundException;
 import com.yldrmsrkn.Inventory.repository.InventoryRepository;
 import com.yldrmsrkn.Inventory.service.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@EnableAutoConfiguration
 @RequestMapping("/api/inventory")
 public class InventoryController {
 
@@ -49,6 +53,12 @@ public class InventoryController {
     public ResponseEntity<Inventory> getInventoryById(@PathVariable(value = "id") Long inventoryId) throws Exception, InventoryNotFoundException {
         Inventory inventory = inventoryService.getInventoryById(inventoryId);
         return ResponseEntity.ok().body(inventory);
+    }
+
+    @GetMapping("/inventorieshistory")
+    public ResponseEntity<List<InventoryHistory>> getAllProductsHistory() {
+        List<InventoryHistory> inventoryHistories = inventoryService.getAllInventoryHistories();
+        return new ResponseEntity<>(inventoryHistories, HttpStatus.OK);
     }
 
     @PostMapping("/")
