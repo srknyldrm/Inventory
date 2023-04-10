@@ -51,7 +51,41 @@ Usage Platforms
   - Filters by warehouse http://localhost:8080/api/inventory/warehouse/{warehouse_işd}
     ![image](https://user-images.githubusercontent.com/6370588/230990498-7a83b11f-2dfa-4ece-a65a-c7ed3c0f7dde.png)
     
-  - Filters by region
+  - Filters by region http://localhost:8080/api/inventory/region/{region
     ![image](https://user-images.githubusercontent.com/6370588/230990731-3a67b91a-bb60-4bfc-8118-ec6d71ec33c5.png)
 
+  Warehouse Operations
+  --------------------
+  - Get http://localhost:8080/api/warehouse/ - lists all warehouse
+  ![image](https://user-images.githubusercontent.com/6370588/231001489-5fa65564-33ff-4714-ade6-2ec30dda2171.png)
+  
+  - Get http://localhost:8080/api/warehouse/{warehouse_id} - get warehouse by id
+    ![image](https://user-images.githubusercontent.com/6370588/231002013-fddadcd1-8947-4d82-9e69-dd11cf04e099.png)
+    
+  Warehouse Operations
+  --------------------
+  - Get http://localhost:8080/products/producthistory - Shows the log of all crud operations on the products
+    ![image](https://user-images.githubusercontent.com/6370588/231002279-6687f411-bdda-46ae-8b6a-d395bf0350b1.png)
+    
+  - Get http://localhost:8080/api/inventory/inventorieshistory - Shows the log of all crud operations on the inventory
+    ![image](https://user-images.githubusercontent.com/6370588/231002722-4a6390b5-05ce-4b9a-aade-2436dadfeb61.png)
+
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
