@@ -37,7 +37,7 @@ Usage Platforms
   - Remove http://localhost:8080/api/inventory/remove?removeQuantity={value} - Records are dropped from the relevant repository as much as the removeQuantity value. It checks the equality of warehouse and product information. Prints log if below critical level
     ![image](https://user-images.githubusercontent.com/6370588/230988930-d562cdcc-59dc-469a-82fc-f7d98fb567d7.png)
   
-  - Delete http://localhost:8080/api/inventory/{inventory_id}
+  - Delete http://localhost:8080/api/inventory/{inventory_id}                                  
     ![image](https://user-images.githubusercontent.com/6370588/230989224-932484d2-5607-4aa6-a301-6b9616503e9d.png)
 
   Filter Operations
