@@ -12,10 +12,10 @@ Usage Platforms
 -----------------
   Product crud Operations
   -----------------------
-  - Get http://localhost:8080/products - lists all products.
+  - Get http://localhost:8080/products - lists all products.                      
     ![image](https://user-images.githubusercontent.com/6370588/230985158-005a8830-fcf8-4f2c-ae5c-3600c3b79651.png)
   
-  - Post http://localhost:8080/products - Adds product.
+  - Post http://localhost:8080/products - Adds product.                                
    ![image](https://user-images.githubusercontent.com/6370588/230985780-8dc3da37-58ea-4239-8755-94d3393ef2c0.png)
   
   - Put http://localhost:8080/products/{product_id} - Updates with the id of the product
@@ -37,7 +37,7 @@ Usage Platforms
   - Remove http://localhost:8080/api/inventory/remove?removeQuantity={value} - Records are dropped from the relevant repository as much as the removeQuantity value. It checks the equality of warehouse and product information. Prints log if below critical level
     ![image](https://user-images.githubusercontent.com/6370588/230988930-d562cdcc-59dc-469a-82fc-f7d98fb567d7.png)
   
-  - Delete http://localhost:8080/api/inventory/{inventory_id}
+  - Delete http://localhost:8080/api/inventory/{inventory_id}                                  
     ![image](https://user-images.githubusercontent.com/6370588/230989224-932484d2-5607-4aa6-a301-6b9616503e9d.png)
 
   Filter Operations
@@ -51,7 +51,41 @@ Usage Platforms
   - Filters by warehouse http://localhost:8080/api/inventory/warehouse/{warehouse_işd}
     ![image](https://user-images.githubusercontent.com/6370588/230990498-7a83b11f-2dfa-4ece-a65a-c7ed3c0f7dde.png)
     
-  - Filters by region
+  - Filters by region http://localhost:8080/api/inventory/region/{region
     ![image](https://user-images.githubusercontent.com/6370588/230990731-3a67b91a-bb60-4bfc-8118-ec6d71ec33c5.png)
 
+  Warehouse Operations
+  --------------------
+  - Get http://localhost:8080/api/warehouse/ - lists all warehouse
+  ![image](https://user-images.githubusercontent.com/6370588/231001489-5fa65564-33ff-4714-ade6-2ec30dda2171.png)
+  
+  - Get http://localhost:8080/api/warehouse/{warehouse_id} - get warehouse by id
+    ![image](https://user-images.githubusercontent.com/6370588/231002013-fddadcd1-8947-4d82-9e69-dd11cf04e099.png)
+    
+  Warehouse Operations
+  --------------------
+  - Get http://localhost:8080/products/producthistory - Shows the log of all crud operations on the products
+    ![image](https://user-images.githubusercontent.com/6370588/231002279-6687f411-bdda-46ae-8b6a-d395bf0350b1.png)
+    
+  - Get http://localhost:8080/api/inventory/inventorieshistory - Shows the log of all crud operations on the inventory
+    ![image](https://user-images.githubusercontent.com/6370588/231002722-4a6390b5-05ce-4b9a-aade-2436dadfeb61.png)
+
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
