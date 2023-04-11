@@ -24,7 +24,7 @@ public class WarehouseController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Warehouse> getWarehouseById(@PathVariable(value = "id") Long warehouseId) throws Exception, WarehouseNotFoundException {
+    public ResponseEntity<Warehouse> getWarehouseById(@PathVariable(value = "id") Long warehouseId) throws WarehouseNotFoundException {
         Warehouse warehouse = warehouseService.getWarehouseById(warehouseId);
         return ResponseEntity.ok().body(warehouse);
     }
@@ -35,13 +35,13 @@ public class WarehouseController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Warehouse> updateWarehouse(@PathVariable(value = "id") Long warehouseId, @RequestBody Warehouse warehouseDetails) throws Exception, WarehouseNotFoundException {
+    public ResponseEntity<Warehouse> updateWarehouse(@PathVariable(value = "id") Long warehouseId, @RequestBody Warehouse warehouseDetails) throws WarehouseNotFoundException {
         Warehouse updatedWarehouse = warehouseService.updateWarehouse(warehouseId, warehouseDetails);
         return ResponseEntity.ok(updatedWarehouse);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteWarehouse(@PathVariable(value = "id") Long warehouseId) throws Exception, WarehouseNotFoundException {
+    public ResponseEntity<Void> deleteWarehouse(@PathVariable(value = "id") Long warehouseId) throws WarehouseNotFoundException {
         warehouseService.deleteWarehouse(warehouseId);
         return ResponseEntity.ok().build();
     }

@@ -27,15 +27,15 @@ public class WarehouseService {
     }
 
     public Warehouse updateWarehouse(Long id, Warehouse warehouse) throws WarehouseNotFoundException {
-        Warehouse existingWarehouse = warehouseRepository.findById((long) id).orElseThrow(() -> new WarehouseNotFoundException("Warehouse not found with id: " + id));
+        Warehouse existingWarehouse = warehouseRepository.findById(id).orElseThrow(() -> new WarehouseNotFoundException("Warehouse not found with id: " + id));
         existingWarehouse.setName(warehouse.getName());
-        // existingWarehouse.setAddress(warehouse.getAddress());
+        existingWarehouse.setAdress(warehouse.getAdress());
         warehouseRepository.save(existingWarehouse);
         return existingWarehouse;
     }
 
     public void deleteWarehouse(Long id) throws WarehouseNotFoundException {
-        Warehouse existingWarehouse = warehouseRepository.findById((long) id).orElseThrow(() -> new WarehouseNotFoundException("Warehouse not found with id: " + id));
+        Warehouse existingWarehouse = warehouseRepository.findById(id).orElseThrow(() -> new WarehouseNotFoundException("Warehouse not found with id: " + id));
         warehouseRepository.delete(existingWarehouse);
     }
 }
